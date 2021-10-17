@@ -1,0 +1,58 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    .dialogsItems {
+        .active > a{
+            transition: .2s;
+            color: #ffa9a9;
+
+        }
+        .active{
+            background-color: rgba(165, 165, 165, 0.374);
+        }
+    }
+    .messages{
+        background-color: rgba(255, 169, 169, 0.15);
+        .chatInputBox{
+            background-color: rgba(164, 164, 164, 0.58);
+            border-radius: 0.6em;
+            min-height: 60px;
+            width: 100%;
+            position: relative;
+            textarea{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: transparent;
+                border: none;
+                color: #fff;
+                min-height: 35px;
+                width: 80%;
+                padding: 10px 10px;
+                &::placeholder{
+                    color: #fff;
+                }
+            }
+            .sendMessage, .downloadImage{
+                position: absolute;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                img{
+                    width: 35px;
+                }
+            }
+            .sendMessage{
+                right: 10px;
+            }
+            .downloadImage{
+                right: 70px;
+            }
+        }
+    }
+
+}
+

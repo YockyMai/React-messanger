@@ -1,0 +1,18 @@
+.messageItem{
+    >*{
+        padding: 10px 5px;
+    }
+    img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .textMessage{
+        display: inline-block;
+    }
+    .userName{
+        color: #a4a4a4;
+
+    }
+}

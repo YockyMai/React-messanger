@@ -1,0 +1,46 @@
+.myPosts{
+    padding-left: 20px;
+}
+.newPost{
+    display: flex;
+    align-items: center;
+    textarea{
+        transition: 0.3s;
+        z-index: 1;
+        max-width: 40%;
+        min-width: 20%;
+        height: 35px;
+        border-bottom-left-radius: 0.6em;
+        border-top-left-radius: 0.6em;
+        background-color: rgb(92, 92, 92);
+    }
+    textarea:focus{
+        background-color: rgb(148, 148, 148);
+        transition: 0.3s;
+        margin-right: 84px;
+    }
+    textarea, .toPublish{
+        color: #fff;
+        font-weight: 400;
+        font-size: 16px;
+    }
+}
+.toPublish{
+    background-color: rgb(79, 79, 79);
+    border-bottom-right-radius: 0.6em;
+    border-top-right-radius: 0.6em;
+    border: none;
+    height: 41px;
+    width: 85px;
+    width: auto;
+    font-weight: 400;
+    margin-left: -85px;
+}
+.toPublish:hover{
+    cursor: pointer;
+
+}
+.Posts{
+    margin-top: 20px;
+}
+

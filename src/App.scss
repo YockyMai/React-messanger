@@ -1,0 +1,43 @@
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.body {
+  min-height: 100vh;
+  background-image: url(https://besthqwallpapers.com/img/original/66682/deadpool-polygon-style-art-superhero-portrait.jpg);
+  background-attachment: fixed; //прокрутка изображение со скроллом
+}
+
+.app-wrapper {
+  margin: 0 auto;
+  width: 80%;
+  padding-top: 20px;
+  display: grid; /* обьявляем систему grid */
+  grid-template-columns: 120px 1fr; /*сколько колонок*/
+  grid-template-rows:150px 10fr; /*сколько строк*/
+  grid-gap: 10px; /*расстояние между */
+  grid-template-areas: /* Позиционирование блоков */
+          "header header"
+          "nav main-content";
+}
+
+.app-wrapper-content {
+  background-color: rgba(165, 165, 165, 0.274);
+  border-radius: 0.6em;
+  grid-area: main-content; /*псевдоним к обращению через grid */
+}
+
+textarea{
+  outline: 0;
+  outline-offset: 0;
+  resize:none;
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+

@@ -1,0 +1,8 @@
+.Header{
+    grid-area: header; /*псевдоним к обращению через grid */
+    background-color: rgba(165, 165, 165, 0.274);
+  border-radius: 0.6em;
+}
+.logo{
+    width: 120px;
+}

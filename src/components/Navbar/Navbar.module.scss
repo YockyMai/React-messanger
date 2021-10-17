@@ -1,0 +1,30 @@
+.nav{
+    grid-area: nav; /*псевдоним к обращению через grid */
+    background-color: rgba(165, 165, 165, 0.274);
+    border-radius: 0.6em;
+}
+.nav_element{
+    padding: 1px 4px;
+    border-radius: 0.6em;
+    display: block;
+    transition: .2s;
+}
+.nav_element p{
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.nav_element:hover{
+    background-color: rgba(165, 165, 165, 0.374);
+    cursor: pointer;
+    transition: .2s;
+}
+.active>p{
+
+    transition: .2s;
+    color: #ffa9a9;
+}
+
+.active{
+    background-color: rgba(165, 165, 165, 0.374);
+}

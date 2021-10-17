@@ -1,0 +1,40 @@
+.newPost__text{
+    resize:none;
+    background-color: rgb(92, 92, 92);
+    border-radius: 0.6em;
+    color: #fff;
+}
+
+.userPhoto{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.likeBlock{
+    display: flex;
+    align-items: center;
+    *{
+        margin-left: 5px;
+        display: inline;
+    }
+    width: 70px;
+    height: 30px;
+    background-color: black;
+    border-radius: 0.6em;
+    background-color: rgba(92, 92, 92, 0.4);
+    p{
+        color: #fff;
+    }
+    .like{
+        width: 25px;
+        transition: .3s;
+        display: inline;
+    }
+    .like:hover{
+        width: 27px;
+        transition: .3s;
+        transform: translateX(-1px) translateY(-1px);
+        cursor: pointer;
+    }
+}
+
