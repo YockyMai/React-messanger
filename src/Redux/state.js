@@ -2,10 +2,6 @@
 import profileReducer from "./profileReducer";
 import dialogsReducer from "./dialogsReducer";
 
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
-const SEND_MESSAGE = 'SEND_MESSAGE';
 let store = {
     _state : {
         profilePage: {
@@ -50,37 +46,10 @@ let store = {
     },
     dispatch(action){
         this._state.profilePage = profileReducer(this._state.profilePage, action)
-        this._state.profilePage = dialogsReducer(this._state.messagesPage, action)
+        this._state.messagesPage = dialogsReducer(this._state.messagesPage, action)
         this._callSubscribe();
     }
 }
-
-export const addPost_ActionCreator = () => {
-    return{
-        type: ADD_POST
-    }
-}
-export const updateNewPostText_ActionCreator = (newText) => {
-    return{
-        type: UPDATE_NEW_POST_TEXT,
-        newText: newText
-    }
-}
-export const sendMessageCreator = () => {
-    return{
-        type: SEND_MESSAGE
-    }
-}
-export const updateNewMessageBodyCreator = (body) => {
-    return{
-        type: UPDATE_NEW_MESSAGE_BODY,
-        body: body
-    }
-}
-
-
-
-
 
 export default store;
 window.store = store;

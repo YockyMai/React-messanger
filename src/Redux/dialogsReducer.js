@@ -5,15 +5,25 @@ export const dialogsReducer = (state ,action) => {
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_BODY:
             state.newMessageBody = action.body;
-            break;
+            return state;
         case SEND_MESSAGE:
             let body = state.newMessageBody;
             state.newMessageBody = '';
             state.messagesData.push({id: 7, message: body});
-            break;
+            return state;
+        default :
+            return state;
     }
-
-    return state;
 }
-
+export const sendMessageCreator = () => {
+    return{
+        type: SEND_MESSAGE
+    }
+}
+export const updateNewMessageBodyCreator = (body) => {
+    return{
+        type: UPDATE_NEW_MESSAGE_BODY,
+        body: body
+    }
+}
 export default dialogsReducer;
