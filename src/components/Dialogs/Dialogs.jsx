@@ -2,11 +2,10 @@ import React from "react";
 import s from './Dialogs.module.scss'
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./Messages/Messages";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../Redux/dialogsReducer";
 
 
 const Dialogs = (props) => {
-    let state = props.store.getState().messagesPage;
+    let state = props.messagesPage;
 
     let messageElement =
         state.messagesData.map( (messageEl) => <MessageItem message={messageEl.message} id={messageEl.id}/> )
@@ -14,18 +13,17 @@ const Dialogs = (props) => {
         state.dialogsData.map( (dialog) => <DialogItem name={dialog.name} id={dialog.id} ava={dialog.avatar}/> )
     /*Создаем массив методом map который возращает готовый элемент с подставленными данными, взятый из Массива с данными dialogsData BLL*/
     function handleTest(e) {
-        if (e.charCode == 13 && !e.shiftKey) {
-            props.dispatch(sendMessageCreator());
+        if (e.charCode === 13 && !e.shiftKey) {
+            props.sendMessage();
         }
     }
 
-    let newMessageBody = state.newMessageBody;
     let onSendMessageClick = () => {
-        props.dispatch(sendMessageCreator());
+        props.sendMessage();
     }
     let onNewMessageChange = (e) => {
         let body = e.target.value;
-        props.dispatch(updateNewMessageBodyCreator(body));
+        props.onNewMessageChange(body);
     }
     return (
         <div className={s.dialogs}>
@@ -35,7 +33,7 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 {messageElement} {/*Массив со всеми Сообщениями*/}
                 <div className={s.chatInputBox}>
-                    <textarea placeholder={'Напишите сообщение...'} value={newMessageBody} onChange={onNewMessageChange} onKeyPress={handleTest}/>
+                    <textarea placeholder={'Напишите сообщение...'} value={props.newMessageBody} onChange={onNewMessageChange} onKeyPress={handleTest}/>
                     <button className={s.downloadImage}>
                         <img src="https://www.freeiconspng.com/uploads/photo-video-slr-camera-icon-512x512-pixel-12.png" alt="send"/>
                     </button>

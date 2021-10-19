@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from "./Redux/state";
+import store from "./Redux/redux-store";
 import {BrowserRouter} from "react-router-dom";
 
-let rerender = (state) => {
+let rerender = () => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state = {store.getState()}
-                 store = {store}
+            <App store = {store}
                  dispatch = {store.dispatch.bind(store)}/> {/*bind - хард бинд что элементы берутся с store*/}
         </BrowserRouter>,
         document.getElementById('root')
@@ -18,7 +17,10 @@ let rerender = (state) => {
 }
 
 rerender(store.getState());
-store.subscribe(rerender);
+store.subscribe( () => {
+    let state = store.getState()
+    rerender(state);
+});
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
