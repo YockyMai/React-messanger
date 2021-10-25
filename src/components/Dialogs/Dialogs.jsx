@@ -8,9 +8,9 @@ const Dialogs = (props) => {
     let state = props.messagesPage;
 
     let messageElement =
-        state.messagesData.map( (messageEl) => <MessageItem message={messageEl.message} id={messageEl.id}/> )
+        state.messagesData.map( (messageEl) => <MessageItem message={messageEl.message} id={messageEl.id} key={messageEl.id}/> )
     let dialogElement =
-        state.dialogsData.map( (dialog) => <DialogItem name={dialog.name} id={dialog.id} ava={dialog.avatar}/> )
+        state.dialogsData.map( (dialog) => <DialogItem name={dialog.name} id={dialog.id} ava={dialog.avatar} key={dialog.id}/> )
     /*Создаем массив методом map который возращает готовый элемент с подставленными данными, взятый из Массива с данными dialogsData BLL*/
     function handleTest(e) {
         if (e.charCode === 13 && !e.shiftKey) {

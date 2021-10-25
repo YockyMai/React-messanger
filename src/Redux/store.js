@@ -31,9 +31,8 @@ let store = {
                 {id: 5, message: 'well'},
                 {id: 6, message: 'my name is Valera'}
             ],
-            newMessageBody : ""
+            newMessageBody : ''
         }
-
     },
     getState(){
       return this._state

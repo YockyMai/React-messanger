@@ -5,22 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from "./Redux/redux-store";
 import {BrowserRouter} from "react-router-dom";
+import {Provider} from "react-redux"; // подключили провайдер чтобы получать пропсы удобнее
 
-let rerender = () => {
-    ReactDOM.render(
-        <BrowserRouter>
-            <App store = {store}
-                 dispatch = {store.dispatch.bind(store)}/> {/*bind - хард бинд что элементы берутся с store*/}
-        </BrowserRouter>,
-        document.getElementById('root')
-    );
-}
 
-rerender(store.getState());
-store.subscribe( () => {
-    let state = store.getState()
-    rerender(state);
-});
+ReactDOM.render(
+    <BrowserRouter>
+        <Provider store={store}>
+            <App/> {/*bind - хард бинд что элементы берутся с store*/}
+        </Provider>
+
+    </BrowserRouter>,
+    document.getElementById('root')
+);
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
