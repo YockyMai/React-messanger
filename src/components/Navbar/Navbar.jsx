@@ -5,9 +5,9 @@ import {NavLink} from "react-router-dom"
 const Navbar = () => {
     return (
         <nav className={s.nav}>
-				<NavLink className = {s.nav_element} to="/profile" activeClassName={s.active}>
+				<NavLink className = {s.nav_element} to="/feed" activeClassName={s.active}>
 					<p>
-						Profile
+						News
 					</p>
 				</NavLink>
 				<NavLink className = {s.nav_element} to="/dialogs" activeClassName={s.active}>
@@ -15,9 +15,9 @@ const Navbar = () => {
 						Messages
 					</p>
 				</NavLink>
-				<NavLink className = {s.nav_element} to="/feed" activeClassName={s.active}>
+				<NavLink className = {s.nav_element} to="/profile" activeClassName={s.active}>
 					<p>
-						News
+						Profile
 					</p>
 				</NavLink>
 				<NavLink className = {s.nav_element} to="/audios" activeClassName={s.active}>
@@ -25,12 +25,17 @@ const Navbar = () => {
 						Music
 					</p>
 				</NavLink>
+				<NavLink className = {s.nav_element} to="/friends" activeClassName={s.active}>
+					<p>
+						Friends
+					</p>
+				</NavLink>
 				<NavLink className = {s.nav_element} to="/settings" activeClassName={s.active}>
 					<p>
 						Settings
 					</p>
 				</NavLink>
-			</nav>
+		</nav>
     );
 }
 
