@@ -1,7 +1,9 @@
 import React from 'react';
 import s from './FriendsElement.module.scss'
 const FriendsElement = (props) => {
+    let confirmSubscription = () => {
 
+    }
     return (
         <div>
             <div className={s.friendsEl}>

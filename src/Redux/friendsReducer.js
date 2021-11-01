@@ -18,7 +18,7 @@ const friendsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 friends: state.friends.map(friends => { //с помошью мап прогоняем всех пользователей создаем копию в которой меняем фолловед,
-                    if (friends === action.userId) {    // возвращаем копию если нужно зафоловить и если не надо то возвращаем обычный friends
+                    if (friends.id === action.userId) {    // возвращаем копию если нужно зафоловить и если не надо то возвращаем обычный friends
                         return {...friends, followed: true}
                     }
                     return friends
@@ -28,7 +28,7 @@ const friendsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 friends: state.friends.map(friends => { //с помошью мап прогоняем всех пользователей создаем копию в которой меняем фолловед,
-                    if (friends === action.userId) {    // возвращаем копию если нужно зафоловить и если не надо то возвращаем обычный friends
+                    if (friends.id === action.userId) {    // возвращаем копию если нужно зафоловить и если не надо то возвращаем обычный friends
                         return {...friends, followed: false}
                     }
                     return friends
